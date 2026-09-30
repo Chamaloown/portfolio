@@ -1,0 +1,72 @@
+/* ─── Loading ─────────────────────────────────────────────────────────────── */
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-family: "Courier New", monospace;
+}
+
+/* ─── Scroll Reveal Animation ─────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Low Poly Background ────────────────────────────────────────────────── */
+
+.low-poly-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background:
+    linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 50%, var(--bg) 100%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.low-poly-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(45deg, transparent 40%, rgba(255, 107, 53, 0.005) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(255, 107, 53, 0.003) 50%, transparent 60%),
+    linear-gradient(135deg, transparent 30%, rgba(212, 200, 184, 0.003) 50%, transparent 70%);
+  background-size: 200% 200%, 200% 200%, 200% 200%;
+  animation: lowPolyShift 20s ease-in-out infinite;
+}
+
+.low-poly-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(255, 107, 53, 0.008) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(255, 107, 53, 0.005) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(212, 200, 184, 0.003) 0%, transparent 70%);
+}
+
+@keyframes lowPolyShift {
+  0%, 100% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+  50% { background-position: 100% 100%, 100% 100%, 100% 100%; }
+}

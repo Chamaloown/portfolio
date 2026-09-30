@@ -1,0 +1,24 @@
+:root {
+  --bg: #0a0a0f;
+  --bg-alt: #12121a;
+  --bg-stone: #1a1a24;
+  --text: #b8b0a8;
+  --text-h: #e8e0d8;
+  --text-muted: #6b6560;
+  --border: #2a2530;
+  --accent: #ff6b35;
+  --accent-hover: #ff8c5a;
+  --accent-glow: rgba(255, 107, 53, 0.3);
+  --accent-dim: rgba(255, 107, 53, 0.08);
+  --card-bg: #14141c;
+  --code-bg: #0d0a08;
+  --code-text: #ff9c6b;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.7);
+  --header-bg: rgba(10, 10, 15, 0.9);
+  --tag-bg: rgba(255, 107, 53, 0.1);
+  --skill-bar-bg: #2a2530;
+  --scanline: rgba(0, 0, 0, 0.15);
+  --bone: #d4c8b8;
+  --bone-dark: #8a7e6e;
+}

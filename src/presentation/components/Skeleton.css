@@ -1,0 +1,70 @@
+/* ─── Skeleton Decorations ────────────────────────────────────────────────── */
+
+.skeleton-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto 40px;
+  max-width: 400px;
+}
+
+.skeleton-divider .bone {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bone-dark), transparent);
+}
+
+.skeleton-divider .torch-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+}
+
+.skeleton-divider .torch-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 12px var(--accent-glow));
+}
+
+/* ─── Torch Fire Particles ────────────────────────────────────────────────── */
+
+.torch-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  animation: torch-fire 1.2s ease-out infinite;
+  pointer-events: none;
+}
+
+.torch-particle:nth-child(1) { animation-delay: 0s; left: 50%; top: -4px; }
+.torch-particle:nth-child(2) { animation-delay: 0.15s; left: 45%; top: -2px; }
+.torch-particle:nth-child(3) { animation-delay: 0.3s; left: 55%; top: -6px; }
+.torch-particle:nth-child(4) { animation-delay: 0.45s; left: 40%; top: 0; }
+.torch-particle:nth-child(5) { animation-delay: 0.6s; left: 60%; top: -4px; }
+.torch-particle:nth-child(6) { animation-delay: 0.75s; left: 48%; top: -8px; }
+.torch-particle:nth-child(7) { animation-delay: 0.9s; left: 52%; top: -2px; }
+.torch-particle:nth-child(8) { animation-delay: 1.05s; left: 50%; top: -6px; }
+
+@keyframes torch-fire {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scale(0);
+  }
+}

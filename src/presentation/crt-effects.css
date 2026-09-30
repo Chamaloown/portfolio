@@ -1,0 +1,52 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ⚠️  CRT EFFECTS — DO NOT REMOVE  ⚠️
+   This file contains the cathodic tube visual effects (scanlines, vignette,
+   flicker). The user explicitly wants these preserved. Do not delete or
+   modify this file without explicit permission.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* CRT Scanline overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  opacity: 0.5;
+  animation: crt-flicker 0.15s infinite;
+}
+
+/* CRT Vignette */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.35) 85%,
+    rgba(255, 107, 53, 0.04) 100%
+  );
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.48; }
+  50% { opacity: 0.52; }
+  100% { opacity: 0.48; }
+}
