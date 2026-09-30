@@ -1,6 +1,6 @@
-# Malo — Portfolio
+# Portfolio
 
-A personal portfolio website for **Malo**, a Backend Software Engineer with 7+ years of experience building scalable systems, designing APIs, and architecting cloud-native solutions.
+A personal portfolio website.
 
 ## Tech Stack
 
