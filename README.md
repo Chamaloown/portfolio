@@ -1,32 +1,57 @@
-# React + TypeScript + Vite
+# Malo — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A personal portfolio website for **Malo**, a Backend Software Engineer with 7+ years of experience building scalable systems, designing APIs, and architecting cloud-native solutions.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React** + **TypeScript**
+- **Vite** — build tool
+- **Effect** — functional programming library
+- **CSS** — custom properties, CRT effects, low-poly background animations
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive design (desktop / tablet / mobile)
+- CRT scanline & vignette effects
+- Animated low-poly background
+- Scroll reveal animations
+- Tech stack grid with pixel-art logos
+- Project showcase with tags
+- Contact section with social links
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+```bash
+# Install dependencies
+pnpm install
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+# Start dev server
+pnpm dev
+
+# Build for production
+pnpm build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Project Structure
+
+```
+src/
+├── presentation/          # UI layer
+│   ├── styles/            # Global styles (variables, utilities)
+│   ├── components/        # Shared UI primitives
+│   └── features/          # Domain-driven sections
+│       ├── header/
+│       ├── hero/
+│       ├── projects/
+│       ├── tech/
+│       ├── about/
+│       ├── contact/
+│       └── footer/
+├── application/           # Use cases & services
+├── domain/                # Entities, value objects, ports
+└── infrastructure/        # Data adapters
+```
+
+## License
+
+MIT
